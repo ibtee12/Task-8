@@ -1,5 +1,8 @@
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ToastProvider from "@/components/ToastProvider";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -27,7 +30,10 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-base-100 text-base-content">
-        {children}
+        <ToastProvider />
+        <Navbar />
+        <div className="flex flex-1 flex-col">{children}</div>
+        <Footer />
       </body>
     </html>
   );
