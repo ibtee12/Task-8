@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
-import { FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
+import { FiMail, FiLock, FiEye, FiEyeOff, FiArrowRight } from "react-icons/fi";
 import { signIn } from "@/lib/auth-client";
 import GoogleButton from "@/components/auth/GoogleButton";
 
@@ -16,6 +16,24 @@ export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  // When the browser restores this page from the back/forward cache (bfcache)
+  // after a successful login + redirect, the frozen "Logging in…" state would
+  // otherwise stay stuck. Reset the button on page-show; if the user is already
+  // logged in, bounce them away from the login page.
+  useEffect(() => {
+    const handlePageShow = (event) => {
+      if (event.persisted) {
+        setLoading(false);
+        // If a session cookie exists, they're already logged in — leave login.
+        if (document.cookie.includes("better-auth")) {
+          window.location.replace(redirectTo);
+        }
+      }
+    };
+    window.addEventListener("pageshow", handlePageShow);
+    return () => window.removeEventListener("pageshow", handlePageShow);
+  }, [redirectTo]);
 
   const handleChange = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -113,14 +131,25 @@ export default function LoginForm() {
           </div>
         </label>
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="btn btn-primary w-full"
-        >
-          {loading && <span className="loading loading-spinner loading-sm" />}
-          {loading ? "Logging in…" : "Login"}
-        </button>
+        <div className="pt-2">
+          <button
+            type="submit"
+            disabled={loading}
+            className="btn btn-primary btn-lg group w-full gap-2 rounded-xl shadow-md transition-shadow hover:shadow-lg"
+          >
+            {loading ? (
+              <>
+                <span className="loading loading-spinner loading-sm" />
+                Logging in…
+              </>
+            ) : (
+              <>
+                Login
+                <FiArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </>
+            )}
+          </button>
+        </div>
       </form>
 
       {/* Divider */}

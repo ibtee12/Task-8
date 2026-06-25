@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiBookOpen, FiMenu, FiLogOut, FiUser } from "react-icons/fi";
@@ -14,8 +15,18 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { data: session, isPending } = useSession();
+  const { data: session, isPending, refetch } = useSession();
   const user = session?.user;
+
+  // Re-check the session when a page is restored from the back/forward cache,
+  // so the navbar never shows a stale logged-in / logged-out state.
+  useEffect(() => {
+    const handlePageShow = (event) => {
+      if (event.persisted && typeof refetch === "function") refetch();
+    };
+    window.addEventListener("pageshow", handlePageShow);
+    return () => window.removeEventListener("pageshow", handlePageShow);
+  }, [refetch]);
 
   const handleLogout = async () => {
     await signOut();

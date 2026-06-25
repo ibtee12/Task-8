@@ -11,6 +11,7 @@ import {
   FiImage,
   FiEye,
   FiEyeOff,
+  FiArrowRight,
 } from "react-icons/fi";
 import { signUp } from "@/lib/auth-client";
 import GoogleButton from "@/components/auth/GoogleButton";
@@ -171,14 +172,25 @@ export default function RegisterForm() {
           </div>
         </label>
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="btn btn-primary w-full"
-        >
-          {loading && <span className="loading loading-spinner loading-sm" />}
-          {loading ? "Creating account…" : "Register"}
-        </button>
+        <div className="pt-2">
+          <button
+            type="submit"
+            disabled={loading}
+            className="btn btn-primary btn-lg group w-full gap-2 rounded-xl shadow-md transition-shadow hover:shadow-lg"
+          >
+            {loading ? (
+              <>
+                <span className="loading loading-spinner loading-sm" />
+                Creating account…
+              </>
+            ) : (
+              <>
+                Register
+                <FiArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </>
+            )}
+          </button>
+        </div>
       </form>
 
       <div className="divider my-6 text-xs text-base-content/40">OR</div>
