@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FiBookOpen, FiMenu, FiLogOut, FiUser } from "react-icons/fi";
 import toast from "react-hot-toast";
 import { useSession, signOut } from "@/lib/auth-client";
@@ -14,12 +14,15 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const { data: session, isPending } = useSession();
   const user = session?.user;
 
   const handleLogout = async () => {
     await signOut();
     toast.success("You have been logged out.");
+    router.push("/");
+    router.refresh();
   };
 
   const isActive = (href) =>
