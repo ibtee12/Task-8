@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "title": "The Whispering Pines",
+    "author": "Eleanor Hartwell",
+    "description": "A sweeping family saga set in a remote mountain town, where three generations confront the secrets buried beneath the old pinewood estate. A story of memory, forgiveness, and the roots that bind us.",
+    "category": "Story",
+    "available_quantity": 5,
+    "image_url": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "2",
+    "title": "Letters from the Lighthouse",
+    "author": "Marcus Bell",
+    "description": "When a young woman inherits a crumbling coastal lighthouse, she discovers a box of unsent letters that unravel a decades-old love story and a mystery that the tides nearly washed away forever.",
+    "category": "Story",
+    "available_quantity": 3,
+    "image_url": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "3",
+    "title": "The Cartographer's Daughter",
+    "author": "Priya Raman",
+    "description": "In 19th-century India, a mapmaker's daughter defies convention to chart unexplored territory, drawing not just rivers and mountains but the boundaries of her own destiny.",
+    "category": "Story",
+    "available_quantity": 7,
+    "image_url": "https://images.unsplash.com/photo-1531072901881-d644216d4bf9?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "4",
+    "title": "Midnight in the Garden City",
+    "author": "Theodore Vance",
+    "description": "A detective with a fading memory races against time to solve one last case in a city that never quite tells the truth. Atmospheric, twisting, and impossible to put down.",
+    "category": "Story",
+    "available_quantity": 0,
+    "image_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "5",
+    "title": "Clean Architecture in Practice",
+    "author": "Daniel Okonkwo",
+    "description": "A pragmatic guide to designing maintainable software systems. Learn how to draw boundaries, decouple components, and build codebases that survive a decade of change.",
+    "category": "Tech",
+    "available_quantity": 8,
+    "image_url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "6",
+    "title": "The Pragmatic Web Engineer",
+    "author": "Sofia Lindqvist",
+    "description": "From rendering strategies to caching layers, this hands-on book demystifies modern full-stack development with practical patterns you can ship to production today.",
+    "category": "Tech",
+    "available_quantity": 6,
+    "image_url": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "7",
+    "title": "Algorithms Unlocked",
+    "author": "Hiroshi Tanaka",
+    "description": "An approachable journey through the algorithms that power the digital world — sorting, searching, graphs, and dynamic programming — explained with clarity and real examples.",
+    "category": "Tech",
+    "available_quantity": 4,
+    "image_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "8",
+    "title": "Designing Resilient Systems",
+    "author": "Amara Nwosu",
+    "description": "Distributed systems fail in surprising ways. This book teaches you how to build software that bends without breaking, using fault tolerance, observability, and graceful degradation.",
+    "category": "Tech",
+    "available_quantity": 2,
+    "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "9",
+    "title": "Cosmos and Consciousness",
+    "author": "Dr. Lena Fischer",
+    "description": "What is our place in the universe? A lyrical exploration of cosmology, neuroscience, and the deep questions that connect the stars above to the minds that observe them.",
+    "category": "Science",
+    "available_quantity": 5,
+    "image_url": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "10",
+    "title": "The Quantum Frontier",
+    "author": "Rajesh Mehta",
+    "description": "Step into the strange and beautiful world of quantum mechanics. From entanglement to computing, this book makes the counterintuitive feel astonishingly clear.",
+    "category": "Science",
+    "available_quantity": 9,
+    "image_url": "https://images.unsplash.com/photo-1635070041409-e63e783ce3c1?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "11",
+    "title": "Of Cells and Symphonies",
+    "author": "Grace Achebe",
+    "description": "A microscopic odyssey through the living cell, revealing the elegant machinery of life. Biology has never read quite this much like poetry.",
+    "category": "Science",
+    "available_quantity": 6,
+    "image_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "12",
+    "title": "The Climate Equation",
+    "author": "Oliver Grant",
+    "description": "A clear-eyed look at the science of a warming planet — the data, the models, and the innovations that could still tip the balance toward a livable future.",
+    "category": "Science",
+    "available_quantity": 3,
+    "image_url": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?auto=format&fit=crop&w=600&q=80"
+  }
+]
