@@ -7,11 +7,6 @@ security and performance using **BetterAuth**, **Next.js**, and **MongoDB**.
 
 > **Assignment category:** A8 — Mango
 
----
-
-## 🔗 Live URL
-
-**https://your-deployment-url.vercel.app** _(replace after deploying)_
 
 ---
 
@@ -140,13 +135,3 @@ src/
 ├─ data/books.json        # The 12-book catalog
 └─ lib/                   # auth, mongodb, session, api, books helpers
 ```
-
----
-
-## 🔐 Notes
-
-- Book data lives in `src/data/books.json` and is served through Next.js API
-  routes (`/api/books`, `/api/books/[id]`).
-- Per the assignment, there is **no email verification or forgot-password**
-  flow, and registration sends the user to the login page (no auto-login).
-- `.env.local` is git-ignored; never commit secrets.
