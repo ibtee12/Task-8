@@ -131,6 +131,16 @@ body {
   background: var(--color-primary);
 }
 
+/* Swiper pagination bullets themed to match Inkwell */
+.swiper-pagination-bullet {
+  background: var(--color-base-content);
+  opacity: 0.25;
+}
+.swiper-pagination-bullet-active {
+  background: var(--color-primary);
+  opacity: 1;
+}
+
 /* Reusable line-clamp helpers */
 .line-clamp-2 {
   display: -webkit-box;
