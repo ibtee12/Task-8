@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
       data-theme="inkwell"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-base-100 text-base-content">
+      <body className="min-h-full flex flex-col overflow-x-hidden bg-base-100 text-base-content">
         <ToastProvider />
         <Navbar />
         <div className="flex flex-1 flex-col">{children}</div>
