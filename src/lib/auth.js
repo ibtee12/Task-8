@@ -25,6 +25,14 @@ export async function getAuth() {
   const db = await getDb();
   const client = await getMongoClient();
 
+  // Enforce one account per email at the database level (safety net on top of
+  // BetterAuth's own duplicate handling). Index creation is idempotent.
+  try {
+    await db.collection("user").createIndex({ email: 1 }, { unique: true });
+  } catch {
+    /* index may already exist — ignore */
+  }
+
   authInstance = betterAuth({
     database: mongodbAdapter(db, { client, transaction: false }),
     baseURL: process.env.BETTER_AUTH_URL || "http://localhost:3000",
