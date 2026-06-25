@@ -30,3 +30,13 @@ export async function fetchBooks({ search = "", category = "" } = {}) {
   const data = await res.json();
   return data.books;
 }
+
+/** Fetch a single book from our API route. Returns null on 404. */
+export async function fetchBook(id) {
+  const base = await getBaseUrl();
+  const res = await fetch(`${base}/api/books/${id}`, { cache: "no-store" });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error("Failed to fetch book");
+  const data = await res.json();
+  return data.book;
+}
