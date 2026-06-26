@@ -6,6 +6,9 @@ import { fetchBook } from "@/lib/api";
 import { getServerSession } from "@/lib/session";
 import BorrowButton from "@/components/books/BorrowButton";
 
+// Private, session-gated route — never prerender at build time.
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const book = await fetchBook(id);

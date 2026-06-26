@@ -11,6 +11,9 @@ import {
 } from "react-icons/fi";
 import { getServerSession } from "@/lib/session";
 
+// Session-gated, DB-backed route — never prerender at build time.
+export const dynamic = "force-dynamic";
+
 export const metadata = { title: "My Profile — Inkwell" };
 
 /**
